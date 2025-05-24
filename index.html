@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Score Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cricket Score Manager</h1>
+
+        <!-- Team Names Input -->
+        <div class="team-names">
+            <label for="team1">Team 1:</label>
+            <input type="text" id="team1" placeholder="Enter Team 1 name">
+            <label for="team2">Team 2:</label>
+            <input type="text" id="team2" placeholder="Enter Team 2 name">
+            <button id="startMatch">Start Match</button>
+        </div>
+
+        <!-- Toss Result Input -->
+        <div class="toss-result" style="display: none;">
+            <h2>Toss Result</h2>
+            <label for="tossWinner">Toss Winner:</label>
+            <select id="tossWinner">
+                <option value="team1">Team 1</option>
+                <option value="team2">Team 2</option>
+            </select>
+            <label for="tossDecision">Decision:</label>
+            <select id="tossDecision">
+                <option value="bat">Bat</option>
+                <option value="bowl">Bowl</option>
+            </select>
+            <button id="submitToss">Submit Toss</button>
+        </div>
+
+        <!-- Batsmen and Bowler Input -->
+        <div class="player-input" style="display: none;">
+            <h2 id="currentTeam"></h2>
+            <label for="striker">Striker:</label>
+            <input type="text" id="striker" placeholder="Enter Striker's name">
+            <label for="nonStriker">Non-Striker:</label>
+            <input type="text" id="nonStriker" placeholder="Enter Non-Striker's name">
+            <label for="bowler">Bowler:</label>
+            <input type="text" id="bowler" placeholder="Enter Bowler's name">
+            <button id="startInnings">Start Innings</button>
+        </div>
+
+        <!-- Ball-by-Ball Input -->
+        <div class="score-input" style="display: none;">
+            <h2 id="currentTeamDisplay"></h2>
+            <p>Striker: <span id="currentStriker"></span>, Non-Striker: <span id="currentNonStriker"></span>, Bowler: <span id="currentBowler"></span></p>
+            <button id="dotBall">Dot Ball</button>
+            <button id="singleRun">1 Run</button>
+            <button id="twoRuns">2 Runs</button>
+            <button id="threeRuns">3 Runs</button>
+            <button id="fourRuns">4 Runs</button>
+            <button id="sixRuns">6 Runs</button>
+            <button id="wicket">Wicket</button>
+            <button id="extraRun">Extra Run</button>
+            <button id="noBall">No Ball</button>
+            <button id="wideBall">Wide Ball</button>
+            <button id="endInnings">End Innings</button>
+            <button id="showScorecard">Show Detailed Scorecard</button>
+        </div>
+
+        <!-- New Batsman Input (on wicket) -->
+        <div class="new-batsman" style="display: none;">
+            <h2>New Batsman</h2>
+            <label for="newBatsman">New Batsman:</label>
+            <input type="text" id="newBatsman" placeholder="Enter New Batsman's name">
+            <label>How Out:</label>
+            <select id="dismissalType">
+                <option value="bowled">Bowled</option>
+                <option value="caught">Caught</option>
+                <option value="lbw">LBW</option>
+                <option value="run out">Run Out</option>
+                <option value="stumped">Stumped</option>
+            </select>
+            <button id="submitNewBatsman">Submit</button>
+        </div>
+
+        <!-- Live Score Bar -->
+        <div class="live-score-bar" style="display: none;">
+            <h2>Live Score</h2>
+            <p id="liveScore"></p>
+            <p id="batsmenScores"></p>
+            <p id="bowlerStats"></p>
+        </div>
+
+        <!-- Detailed Scorecard -->
+        <div class="scorecard" style="display: none;">
+            <h2>Scorecard</h2>
+            <div id="scorecardOutput"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
